@@ -13,7 +13,7 @@ class LinuxUpdates
     @@prev_hash = ""
     @@delimiter = "_"
     @@force_send_last_upload = Time.now
-    @@os_details = nil
+    @@os_details = {}
 
     MAJOR_MINOR_VERSION_REGEX = /([^\.]+)\.([^\.]+).*/
     OMS_ADMIN_FILE = "/etc/opt/microsoft/omsagent/conf/omsadmin.conf"
@@ -21,7 +21,7 @@ class LinuxUpdates
     SCHEDULE_NAME_VARIABLE = "SCHEDULE_NAME"
     APT_GET_START_DATE_TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 
-    def initialize(log, updateRunFile)
+    def initialize(log, updateRunFile = nil)
         @log = log
         @CURRENT_UPDATE_RUN_FILE = updateRunFile
      end

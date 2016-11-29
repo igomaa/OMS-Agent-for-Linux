@@ -29,10 +29,9 @@ module Fluent
     end
 
     def filter(tag, time, record)
-      xml_string = record['xml']
-      @log.debug "LinuxUpdates : Filtering xml size=#{xml_string.size}"
-      linuxUpdates = LinuxUpdates.new(@log, nil)
-      return linuxUpdates.transform_and_wrap(xml_string, @hostname, time)
+      @log.debug '**********Shujun Debug information*****************'
+      @log.debug "LinuxUpdatesRunProgressFilter: Got new data to send"
+      record
     end # filter
   end # class
 end # module
